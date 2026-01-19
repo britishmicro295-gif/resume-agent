@@ -24,8 +24,32 @@ os.environ['no_proxy'] = '*'
 from agents import run_crew
 
 # ... (后面的 UI 代码保持不变) ...
-st.set_page_config(page_title="DeepSeek 简历助手", layout="wide")
-st.title("🕵️‍♂️ DeepSeek 简历匹配 & 岗位分析助手")
+st.set_page_config(page_title="简历助手", layout="wide")
+
+# 👇👇👇 复制这段"终极隐藏代码" 👇👇👇
+hide_ui_style = """
+<style>
+    /* 1. 隐藏右上角的"三点"菜单 (汉堡菜单) */
+    #MainMenu {visibility: hidden;}
+
+    /* 2. 隐藏顶部的工具栏 (GitHub图标, Deploy按钮, Fork按钮等) */
+    [data-testid="stToolbar"] {visibility: hidden;}
+
+    /* 3. 隐藏顶部的彩色装饰条 */
+    header {visibility: hidden;}
+
+    /* 4. 隐藏底部的 "Made with Streamlit" */
+    footer {visibility: hidden;}
+
+    /* 5. 针对某些版本的额外隐藏 (保险起见) */
+    div[data-testid="stDecoration"] {visibility: hidden;}
+    div[data-testid="stStatusWidget"] {visibility: hidden;}
+</style>
+"""
+st.markdown(hide_ui_style, unsafe_allow_html=True)
+# 👆👆👆 代码结束 👆👆👆
+
+st.title("🕵️‍♂️ 简历匹配 & 岗位分析助手")
 
 with st.sidebar:
     st.header("📝 任务中心")
@@ -37,7 +61,7 @@ if start_btn:
     if not uploaded_file or not jd_input:
         st.error("请先上传简历并填写 JD！")
     else:
-        with st.spinner("DeepSeek 正在思考中..."):
+        with st.spinner("正在思考中..."):
             try:
                 with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp:
                     tmp.write(uploaded_file.getvalue())
