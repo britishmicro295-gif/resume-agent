@@ -29,21 +29,17 @@ st.set_page_config(page_title="简历助手", layout="wide")
 # 👇👇👇 复制这段"终极隐藏代码" 👇👇👇
 hide_ui_style = """
 <style>
-    /* 1. 隐藏右上角的"三点"菜单 (汉堡菜单) */
+    /* 1. 隐藏右上角的"三点"菜单 */
     #MainMenu {visibility: hidden;}
 
-    /* 2. 隐藏顶部的工具栏 (GitHub图标, Deploy按钮, Fork按钮等) */
+    /* 2. 隐藏顶部右侧的 GitHub 图标等工具栏 */
     [data-testid="stToolbar"] {visibility: hidden;}
 
-    /* 3. 隐藏顶部的彩色装饰条 */
-    header {visibility: hidden;}
-
-    /* 4. 隐藏底部的 "Made with Streamlit" */
+    /* 3. 隐藏底部的 "Made with Streamlit" 文字 */
     footer {visibility: hidden;}
 
-    /* 5. 针对某些版本的额外隐藏 (保险起见) */
-    div[data-testid="stDecoration"] {visibility: hidden;}
-    div[data-testid="stStatusWidget"] {visibility: hidden;}
+    /* 4. 隐藏顶部的彩色装饰条 (保留Header本身，让侧边栏按钮能显示) */
+    [data-testid="stDecoration"] {visibility: hidden;}
 </style>
 """
 st.markdown(hide_ui_style, unsafe_allow_html=True)
