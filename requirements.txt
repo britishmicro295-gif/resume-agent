@@ -1,0 +1,6 @@
+streamlit
+crewai
+litellm
+openai==1.83.0
+duckduckgo-search
+pdfplumber
