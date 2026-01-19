@@ -35,11 +35,6 @@ hide_ui_style = """
     /* 2. 隐藏顶部右侧的 GitHub 图标等工具栏 */
     [data-testid="stToolbar"] {visibility: hidden;}
 
-    /* 3. 隐藏底部的 "Made with Streamlit" 文字 */
-    footer {visibility: hidden;}
-
-    /* 4. 隐藏顶部的彩色装饰条 (保留Header本身，让侧边栏按钮能显示) */
-    [data-testid="stDecoration"] {visibility: hidden;}
 </style>
 """
 st.markdown(hide_ui_style, unsafe_allow_html=True)
