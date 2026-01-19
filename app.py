@@ -26,20 +26,6 @@ from agents import run_crew
 # ... (后面的 UI 代码保持不变) ...
 st.set_page_config(page_title="简历助手", layout="wide")
 
-# 👇👇👇 复制这段"终极隐藏代码" 👇👇👇
-hide_ui_style = """
-<style>
-    /* 1. 隐藏右上角的"三点"菜单 */
-    #MainMenu {visibility: hidden;}
-
-    /* 2. 隐藏顶部右侧的 GitHub 图标等工具栏 */
-    [data-testid="stToolbar"] {visibility: hidden;}
-
-</style>
-"""
-st.markdown(hide_ui_style, unsafe_allow_html=True)
-# 👆👆👆 代码结束 👆👆👆
-
 st.title("🕵️‍♂️ 简历匹配 & 岗位分析助手")
 
 with st.sidebar:
