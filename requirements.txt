@@ -1,6 +1,18 @@
+# 基础框架
 streamlit
 crewai
 litellm
 openai==1.83.0
-duckduckgo-search
+
+# 数据处理与搜索
 pdfplumber
+duckduckgo-search
+
+# 向量数据库与RAG核心
+langchain-community
+sentence-transformers
+chromadb
+
+# --- 🚀 补充项：确保云端兼容性 ---
+pysqlite3-binary  # 关键！解决 Streamlit Cloud 的 SQLite 版本过低问题
+langchain-huggingface # 确保 SentenceTransformerEmbeddings 调用更稳定
